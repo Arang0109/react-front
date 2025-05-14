@@ -15,8 +15,8 @@ const useWorkplaceStore = create((set) => ({
   loadWorkplaces: async () => {
     set({ loading: true });
     try {
-      const list = await fetchWorkplaceList();
-      set({ workplaces: list });
+      const res = await fetchWorkplaceList();
+      set({ workplaces: res.data });
     } catch (err) {
       console.error(err);
     } finally {

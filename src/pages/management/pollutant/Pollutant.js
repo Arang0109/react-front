@@ -21,9 +21,9 @@ export default function Pollutant() {
 				<h4 className="fw-bold">측정항목 목록</h4>
 				<div className="text-muted" style={{
 						fontSize:"0.75rem"
-					}}>총 {pollutants.length} 항목 | 관리부서 : 실험실</div>
+					}}>총 항목 | 관리부서 : 실험실</div>
 				<hr/>
-				<PollutantTable pollutants={pollutants} />
+				<PollutantTable pollutants={pollutants.data} />
 			</div>
 		</div>
 	);

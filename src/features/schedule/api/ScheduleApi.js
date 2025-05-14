@@ -1,18 +1,14 @@
 import axios from 'axios';
-import qs from 'qs';
 
 const API_BASE = 'http://localhost:8080/api/management/schedules';
 
-export const fetchScheduleList = async () => {
-  const response = await axios.get(`${API_BASE}`);
+export const fetchScheduledWorkplaceList = async () => {
+  const response = await axios.get(`${API_BASE}/atmosphere`);
   return response.data;
 }
 
-export const fetchSubScheduleList = async (groupedScheduleIds) => {
-  const response = await axios.get(`${API_BASE}/subSchedules`, {
-    params: { ids: groupedScheduleIds },
-    paramsSerializer: params => qs.stringify(params, { arrayFormat: 'repeat' }) // 핵심 부분
-  });
+export const fetchScheduledStackList = async (groupedWorkplaceId) => {
+  const response = await axios.get(`${API_BASE}/atmosphere/${groupedWorkplaceId}`);
   return response.data;
 };
 

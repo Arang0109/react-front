@@ -34,8 +34,8 @@ export default function ScheduleDetail() {
           onSelect={(k) => setKey(k)}
           className="mb-3"
         >
-          <Tab eventKey="home" title="기초정보">
-            기초 정보
+          <Tab eventKey="home" title="기본정보">
+            기본 정보
           </Tab>
           <Tab eventKey="profile" title="현장측정">
             <LocalizationProvider dateAdapter={AdapterDayjs}>

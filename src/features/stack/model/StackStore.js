@@ -15,8 +15,8 @@ const useStackStore = create((set) => ({
   loadStacks: async () => {
     set({ loading: true });
     try {
-      const list = await fetchStackList();
-      set({ stacks: list });
+      const res = await fetchStackList();
+      set({ stacks: res.data});
     } catch (err) {
       console.error(err);
     } finally {

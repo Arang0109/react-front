@@ -26,7 +26,7 @@ export default function WorkplaceListTable({ workplaces }) {
 		<div>
       <DataTable
         columns={columns}
-        data={workplaces}
+        data={workplaces ?? []}
       />
     </div>
 	);

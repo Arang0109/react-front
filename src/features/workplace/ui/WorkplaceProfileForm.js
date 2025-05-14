@@ -1,5 +1,5 @@
 import { Form, Row, Col } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import { updateWorkplace, deleteWorkplace } from "features/workplace/api/WorkplaceApi";
 
@@ -11,6 +11,8 @@ import { CustomButton } from 'shared/ui/buttons';
 
 export default function WorkplaceProfileForm({ workplace: initialWorkplace, workplaceId }) {
 	const navigate = useNavigate();
+	const location = useLocation();
+	const isInScheduleContext = location.pathname.includes('/schedules/atmosphere/');
 
 	const {
 		form: workplaceForm,
@@ -48,15 +50,20 @@ export default function WorkplaceProfileForm({ workplace: initialWorkplace, work
 		<div>
 			<div className="my-2">
 				<CustomButton text={buttonText} onClick={handleModify} />
-				<CustomButton text={'삭제'} onClick={() => {
-					handleDeleteEntity({
-						id: workplaceId,
-						deleteFn: deleteWorkplace,
-						redirectPath: `/companies/${workplaceForm.companyId}`,
-						navigate,
-						entityName: '사업장'
-					});
-				}} />
+				{!isInScheduleContext && (
+					<CustomButton
+						text={'삭제'}
+						onClick={() => {
+							handleDeleteEntity({
+								id: workplaceId,
+								deleteFn: deleteWorkplace,
+								redirectPath: `/companies/${workplaceForm.companyId}`,
+								navigate,
+								entityName: '사업장'
+							});
+						}}
+					/>
+				)}
 			</div>
 			<Form>
 				<Row className="mb-3">

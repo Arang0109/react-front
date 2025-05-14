@@ -8,7 +8,6 @@ import { WorkplaceListTable, WorkplaceRegisterModal } from "features/workplace";
 
 export default function CompanyDetail() {
   const workplaces = useCompanyStore(state => state.workplaces);
-	const setWorkplaces = useCompanyStore(state => state.setWorkplaces);
   const company = useCompanyStore(state => state.company);
   const loading = useCompanyStore(state => state.loading);
 
@@ -45,7 +44,7 @@ export default function CompanyDetail() {
 				<hr />
 				<WorkplaceRegisterModal
 					company={company}/>
-				<WorkplaceListTable workplaces={workplaces} setWorkplaces={setWorkplaces} company={company} />
+				<WorkplaceListTable workplaces={workplaces} />
 			</div>
 		</div>
 	);

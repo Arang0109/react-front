@@ -24,7 +24,7 @@ export default function StackListTable({ stacks }) {
 		<div>
       <DataTable
         columns={columns}
-        data={stacks}
+        data={stacks ?? []}
       />
     </div>
 	);

@@ -32,7 +32,7 @@ export default function CompanyListTable() {
     <div>
       <DataTable
         columns={columns}
-        data={companies}
+        data={companies ?? []}
       />
     </div>
     

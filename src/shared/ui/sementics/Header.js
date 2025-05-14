@@ -16,7 +16,7 @@ export default function Headers() {
           <Nav className="me-auto">
 						<NavDropdown title="일정" id="nav-dropdown-schedule">
               <NavDropdown.Item as={Link} to="/schedules/register">일정 등록</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/schedules">자가측정부 일정</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/schedules/atmosphere">자가측정부 일정</NavDropdown.Item>
             </NavDropdown>
 						<NavDropdown title="관리" id="nav-dropdown-management">
               <NavDropdown.Item as={Link} to="/companies">측정대행 의뢰업체</NavDropdown.Item>

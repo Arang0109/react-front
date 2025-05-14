@@ -12,7 +12,7 @@ export default function StackMeasurementsSelect({ onChange, excludedIds = [] }) 
 
   useEffect(() => {
     fetchPollutantList().then((res) => {
-      const grouped = groupByMethod(res)
+      const grouped = groupByMethod(res.data)
 
       setPollutants(grouped);
     });

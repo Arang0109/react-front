@@ -29,7 +29,7 @@ const columns = [
   </button>},
 ];
 
-export default function StackTable({ pollutants }) {
+export default function PollutantTable({ pollutants }) {
 	return (
 		<div>
       <DataTable

@@ -1,6 +1,6 @@
-import { ScheduleListTable } from "features/schedule";
+import { ScheduledWorkplaceListTable } from "features/schedule";
 
-export default function Schedule() {
+export default function ScheduledWorkplace() {
   return(
     <div className="container-fluid mt-4">
       <div className="border p-4" style={{
@@ -9,7 +9,7 @@ export default function Schedule() {
       }}>
         <h4 className="fw-bold">현장측정 분석목록 (대기)</h4>
         <hr/>
-        <ScheduleListTable />
+        <ScheduledWorkplaceListTable />
       </div>
     </div>
   );

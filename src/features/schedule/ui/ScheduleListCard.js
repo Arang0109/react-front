@@ -8,17 +8,15 @@ export default function ScheduleListCard({ data }) {
         <Card key={idx} className="shadow-sm">
           <Card.Body>
             <Card.Title>
-              {item.mainRegNumber
-                ? `KGAR-${new Date().getFullYear().toString().slice(2)}-01-${String(item.mainRegNumber).padStart(3, '0')}`
-                : "접수번호 없음"}
+              {item.workplaceName}
             </Card.Title>
             <div className="mb-2">
               <Badge bg={item.supStatus === "COMPLETED" ? "success" : "secondary"}>
                 {item.supStatus === "COMPLETED" ? "완료" : "미완료"}
               </Badge>
             </div>
-            <div><strong>사업장:</strong> {item.workplaceName}</div>
-            <div><strong>측정 시설:</strong> {item.stackNames}</div>
+            <div>{item.teamName} {item.staffs}</div>
+            <div>{item.measureDate}</div>
           </Card.Body>
         </Card>
       ))}

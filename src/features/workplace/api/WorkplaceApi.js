@@ -17,6 +17,11 @@ export const fetchWorkplaceDetail = async (workplaceId) => {
   return response.data;
 }
 
+export const fetchWorkplaceProfile = async (workplaceId) => {
+  const response = await axios.get(`${API_BASE}/${workplaceId}/profile`);
+  return response.data;
+}
+
 export const updateWorkplace = async (workplaceData) => {
   await axios.patch(`${API_BASE}/${workplaceData.workplaceId}`, workplaceData);
 }

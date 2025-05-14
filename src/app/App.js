@@ -8,7 +8,7 @@ import {
   Workplace, WorkplaceDetail,
   Stack, StackDetail,
   Pollutant } from 'pages/management';
-import { Schedule, ScheduleDetail, SubSchedule, ScheduleRegister } from 'pages/schedule';
+import { ScheduledWorkplace, ScheduledStack, ScheduleDetail, ScheduleRegister } from 'pages/schedule';
 
 import { Header, Footer }  from 'shared/ui/sementics';
 
@@ -30,9 +30,9 @@ function App() {
             <Route path="/stacks/:stackId" element={<StackDetail />} />
             <Route path="/pollutants" element={<Pollutant />} />
 
-            <Route path="/schedules" element={<Schedule />} />
-            <Route path="/schedules/subSchedules" element={<SubSchedule />} />
-            <Route path="/schedules/:groupedScheduleId" element={<ScheduleDetail />} />
+            <Route path="/schedules/atmosphere" element={<ScheduledWorkplace />} />
+            <Route path="/schedules/atmosphere/:scheduledWorkplaceId" element={<ScheduledStack />} />
+            <Route path="/schedules/atmosphere/:scheduledWorkplaceId/:scheduledStackId" element={<ScheduleDetail />} />
             <Route path="/schedules/register" element={<ScheduleRegister />} />
 
             <Route path="/testPage" element={<TestPage />} />

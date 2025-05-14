@@ -16,8 +16,8 @@ const useCompanyStore = create((set) => ({
   loadCompanies: async () => {
     set({ loading: true });
     try {
-      const list = await fetchCompanyList();
-      set({ companies: list });
+      const res = await fetchCompanyList();
+      set({ companies: res.data });
     } catch (err) {
       console.error(err);
     } finally {
