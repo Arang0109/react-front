@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import { useScheduledStackStore } from 'features/schedule';
-import { ScheduledStackListTable } from "features/schedule";
-import { WorkplaceProfileForm } from "features/workplace";
+import { ScheduledStackListTable, useScheduledStackStore } from "features/schedule";
+import { WorkplaceProfileForm, useWorkplaceStore } from "features/workplace";
 
 export default function ScheduledStack() {
   const { scheduledWorkplaceId } = useParams();
@@ -12,9 +11,17 @@ export default function ScheduledStack() {
   const workplace = useScheduledStackStore((state) => state.workplace);
   const loadScheduledStacks = useScheduledStackStore((state) => state.loadScheduledStacks);
 
+  const stacks = useWorkplaceStore((state) => state.stacks);
+  const loadWorkplaceDetail = useWorkplaceStore((state) => state.loadWorkplaceDetail);
+
   useEffect(() => {
     loadScheduledStacks(scheduledWorkplaceId);
   }, [scheduledWorkplaceId, loadScheduledStacks]);
+
+  useEffect(() => {
+  if (workplace?.workplaceId) {
+    loadWorkplaceDetail(workplace.workplaceId);
+  }}, [workplace?.workplaceId]);
 
   if (!workplace) {
     return <div>로딩 중...</div>;

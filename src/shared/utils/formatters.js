@@ -24,6 +24,11 @@ export const formatters = {
     unformat: (value) => value.replace(/[^\d.-]/g, '')
   },
 
+  pressureHpa: {
+    format: (value) => `${parseFloat(value).toFixed(1)} Hpa`,
+    unformat: (value) => value.replace(/[^\d.-]/g, '')
+  },
+
   quantity: {
     format: (value) => {
       if (value === null || value === undefined || value === '') return '-';
@@ -37,6 +42,21 @@ export const formatters = {
 
   temperature: {
     format: (value) => `${parseFloat(value).toFixed(0)} ℃`,
+    unformat: (value) => value.replace(/[^\d.-]/g, '')
+  },
+
+  airTemperature: {
+    format: (value) => `${parseFloat(value).toFixed(1)} ℃`,
+    unformat: (value) => value.replace(/[^\d.-]/g, '')
+  },
+
+  humidity: {
+    format: (value) => `${parseFloat(value).toFixed(1)} %`,
+    unformat: (value) => value.replace(/[^\d.-]/g, '')
+  },
+
+  windSpeed: {
+    format: (value) => `${parseFloat(value).toFixed(1)} m/s`,
     unformat: (value) => value.replace(/[^\d.-]/g, '')
   },
 
